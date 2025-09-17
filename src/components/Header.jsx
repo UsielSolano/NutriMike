@@ -8,7 +8,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-2xl font-extrabold text-yellow-400 tracking-wide">
-          Mi<span className="text-yellow-200">App</span>
+          MugueLuna<span className="text-yellow-200">(NutriMike)</span>
         </h1>
 
         {/* Desktop menu */}
@@ -19,10 +19,7 @@ export default function Header() {
           <a href="/contact" className="hover:text-yellow-200 transition">Contacto</a>
         </nav>
 
-        {/* Botón extra */}
-        <button className="hidden md:block bg-yellow-400 text-black font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 transition">
-          Ingresar
-        </button>
+
 
         {/* Mobile menu button */}
         <button
@@ -41,11 +38,7 @@ export default function Header() {
             <li><a href="/about" className="hover:text-yellow-200 transition">Nosotros</a></li>
             <li><a href="/services" className="hover:text-yellow-200 transition">Servicios</a></li>
             <li><a href="/contact" className="hover:text-yellow-200 transition">Contacto</a></li>
-            <li>
-              <button className="w-full bg-yellow-400 text-black font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-300 transition">
-                Ingresar
-              </button>
-            </li>
+
           </ul>
         </nav>
       )}
