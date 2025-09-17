@@ -8,7 +8,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-2xl font-extrabold text-yellow-400 tracking-wide">
-          MugueLuna<span className="text-yellow-200">(NutriMike)</span>
+          Miguel Luna<span className="text-yellow-200">(NutriMike)</span>
         </h1>
 
         {/* Desktop menu */}
