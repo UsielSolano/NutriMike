@@ -16,7 +16,7 @@ export default function HeroSection() {
           Bienvenido a Página
         </h2>
         <p className="mt-4 text-lg md:text-xl text-yellow-100 max-w-2xl">
-          Tu espacio para conectar con un estilo de vida nuevo y con salud.
+          Tu espacio para conectar con un estilo de vida <b>saludable</b>.
         </p>
         <button className="mt-6 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md hover:bg-yellow-300 transition">
           Conócenos
