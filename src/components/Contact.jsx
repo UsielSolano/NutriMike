@@ -47,7 +47,7 @@ export default function Contact() {
             <Facebook size={32} />
           </a>
           <a
-            href="https://wa.me/5213121051883"
+            href="https://wa.me/5213121051883/Hola%TeAmo"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#fecd5f] transition flex items-center gap-2"
