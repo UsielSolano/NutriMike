@@ -1,52 +1,57 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const links = [
+    { name: "Conóceme", href: "#conoceme" },
+    { name: "Especialidades", href: "#especialidades" },
+    { name: "Consultoría", href: "#consultoria" },
+    { name: "Contacto", href: "#contacto" },
+  ];
 
   return (
-    <header className="w-full bg-[#412904] shadow-lg sticky top-0 z-50">
+    <header className="fixed w-full bg-[#412904] text-white shadow-md z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-extrabold text-[#FECD5F] tracking-wide">
-          Mi<span className="text-[#B69F7C]">App</span>
-        </h1>
+        {/* Logo / Marca */}
+        <h1 className="text-2xl font-bold text-[#fecd5f]">Nutrimikee</h1>
 
-        {/* Desktop menu */}
-        <nav className="hidden md:flex gap-8 text-[#FECD5F] font-medium">
-          <a href="/" className="hover:text-[#FFFFFF] transition">Inicio</a>
-          <a href="/about" className="hover:text-[#FFFFFF] transition">Nosotros</a>
-          <a href="/services" className="hover:text-[#FFFFFF] transition">Servicios</a>
-          <a href="/contact" className="hover:text-[#FFFFFF] transition">Contacto</a>
+        {/* Links desktop */}
+        <nav className="hidden md:flex gap-6">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-[#fecd5f] transition"
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        {/* Botón extra */}
-        <button className="hidden md:block bg-[#FECD5F] text-[#412904] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-[#B69F7C] transition">
-          Ingresar
-        </button>
-
-        {/* Mobile menu button */}
+        {/* Botón menú mobile */}
         <button
-          className="md:hidden text-[#FECD5F] text-2xl"
-          onClick={() => setOpen(!open)}
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white"
         >
-          {open ? "✕" : "☰"}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <nav className="md:hidden bg-[#412904] border-t border-[#806236] shadow-md">
-          <ul className="flex flex-col gap-4 px-6 py-4 text-[#FECD5F] font-medium">
-            <li><a href="/" className="hover:text-[#FFFFFF] transition">Inicio</a></li>
-            <li><a href="/about" className="hover:text-[#FFFFFF] transition">Nosotros</a></li>
-            <li><a href="/services" className="hover:text-[#FFFFFF] transition">Servicios</a></li>
-            <li><a href="/contact" className="hover:text-[#FFFFFF] transition">Contacto</a></li>
-            <li>
-              <button className="w-full bg-[#FECD5F] text-[#412904] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-[#B69F7C] transition">
-                Ingresar
-              </button>
-            </li>
-          </ul>
+      {/* Menú móvil */}
+      {isOpen && (
+        <nav className="md:hidden bg-[#412904] px-6 py-4 space-y-4">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block text-white hover:text-[#fecd5f] transition"
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
       )}
     </header>
