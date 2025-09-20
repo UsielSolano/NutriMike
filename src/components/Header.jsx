@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/1.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,15 @@ export default function Header() {
     <header className="fixed w-full bg-[#412904] text-white shadow-md z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo / Marca */}
-        <h1 className="text-2xl font-bold text-[#fecd5f]">Nutrimikee</h1>
+        <h1 className=" flex items-center  text-2xl font-bold text-[#fecd5f]">
+          <div className="w-22 h-22 flex items-center justify-center rounded-3xl bg-[#412904] shadow-md">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-30 h-30 object-contain filter invert brightness-0"
+            />
+          </div>
+        </h1>
 
         {/* Links desktop */}
         <nav className="hidden md:flex gap-6">

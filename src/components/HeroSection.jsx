@@ -1,4 +1,4 @@
-import headerImage from "../assets/header1.jpg";
+import headerImage from "../assets/header1.webp";
 
 export default function HeroSection() {
   return (
