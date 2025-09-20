@@ -17,11 +17,11 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo / Marca */}
         <h1 className=" flex items-center  text-2xl font-bold text-[#fecd5f]">
-          <div className="w-22 h-22 flex items-center justify-center rounded-3xl bg-[#412904] shadow-md">
+          <div className="flex items-center justify-center rounded-3xl bg-[#412904]">
             <img
               src={logo}
               alt="Logo"
-              className="w-30 h-30 object-contain filter invert brightness-0"
+              className="w-50 h-20 object-contain filter invert brightness-0"
             />
           </div>
         </h1>
