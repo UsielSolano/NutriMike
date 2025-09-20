@@ -5,7 +5,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: "Conóceme", href: "#conoceme" },
+    { name: "Conoceme", href: "#conoceme" },
     { name: "Especialidades", href: "#especialidades" },
     { name: "Consultoría", href: "#consultoria" },
     { name: "Contacto", href: "#contacto" },
