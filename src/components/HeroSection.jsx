@@ -13,7 +13,7 @@ export default function HeroSection() {
           Nutrimikee
         </h2>
         <p className="mt-4 text-lg md:text-2xl text-white italic">
-          Only healthy vibessss
+          Only healthy vibes
         </p>
       </div>
     </section>
