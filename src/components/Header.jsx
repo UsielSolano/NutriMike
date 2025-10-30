@@ -17,7 +17,7 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-[#3d2817] text-white shadow-lg z-50">
       <div className="max-w-full mx-auto px-8 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-20 w-auto object-contain invert brightness-0 invert" />
+          <img src={logo} alt="Logo" className="h-20 w-auto object-contain brightness-0 invert" />
         </div>
 
         <nav className="hidden md:flex gap-16 items-center">
