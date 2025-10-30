@@ -1,17 +1,20 @@
+import AboutmeImage from "../assets/Aboutme.jpg";
+
 export default function About() {
   return (
-    <section id="conoceme" className="bg-[#1a1a1a] text-white py-16 px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#FECD5F] mb-6">Conóceme</h2>
-        <p className="mb-6 text-lg leading-relaxed">
-          Hola, Soy <span className="font-semibold text-[#FECD5F]">Nutrimikee</span> y dedico mis días a transformar la vida de las personas...
-        </p>
-        <h3 className="text-2xl font-bold text-[#B69F7C] mt-8 mb-4">Formación Académica</h3>
-        <ul className="space-y-3">
-          <li>🎓 Licenciado en Nutrición - Universidad de Colima (2018)</li>
-          <li>🔬 Técnico Analista Clínico - Universidad de Colima (2015)</li>
-          <li>📚 Diplomados en composición corporal, dieta cetogénica, nutrición en alto rendimiento, etc.</li>
-        </ul>
+    <section id="conoceme" className="bg-white text-white">
+      <div className="w-full flex gap-0 overflow-hidden bg-[#3d2817] mx-auto px-0">
+        {/* Imagen izquierda */}
+        <div className="w-1/2 h-96">
+          <img src={AboutmeImage} alt="About me" className="w-full h-full object-cover" />
+        </div>
+
+        {/* Texto derecha */}
+        <div className="w-1/2 bg-[#3d2817] p-12 flex items-center justify-center">
+          <p className="text-base w-1/2 leading-relaxed text-justify font-light text-white">
+            Hola, Soy <span className="font-bold text-[#d4af37]">Nutrimikee</span> y dedico mis días a transformar la vida de las personas, por medio de hábitos de alimentación y ejercicio, ayudandote desde la empatia a comprender tu cuerpo y a ofrecerle las mejores opciones para alcanzar tus proyectos y objetivos físicos ó clinicos.
+          </p>
+        </div>
       </div>
     </section>
   );

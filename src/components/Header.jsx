@@ -6,61 +6,48 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: "Conoceme", href: "#conoceme" },
-    { name: "Especialidades", href: "#especialidades" },
-    { name: "Consultoría", href: "#consultoria" },
+    { name: "Contenido", href: "#contenido" },
+    { name: "Consulta", href: "#consulta" },
     { name: "Contacto", href: "#contacto" },
   ];
 
-  return (
-    <header className="fixed w-full bg-[#412904] text-white shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo / Marca */}
-        <h1 className=" flex items-center  text-2xl font-bold text-[#fecd5f]">
-          <div className="flex items-center justify-center rounded-3xl bg-[#412904]">
-            <img
-              src={logo}
-              alt="Logo"
-              className="w-50 h-20 object-contain filter invert brightness-0"
-            />
-          </div>
-        </h1>
+  const whatsappLink = "https://wa.me/523121051883?text=Hola%2C%20estoy%20interesado%20en%20cambiar%20mis%20h%C3%A1bitos%20alimenticios";
 
-        {/* Links desktop */}
-        <nav className="hidden md:flex gap-6">
+  return (
+    <header className="fixed top-0 w-full bg-[#3d2817] text-white shadow-lg z-50">
+      <div className="max-w-full mx-auto px-8 py-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <img src={logo} alt="Logo" className="h-20 w-auto object-contain invert brightness-0 invert" />
+        </div>
+
+        <nav className="hidden md:flex gap-16 items-center">
           {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-[#fecd5f] transition"
-            >
+            <a key={link.name} href={link.href} className="text-[#c4a96a] hover:text-white transition font-bold text-2xl">
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Botón menú mobile */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hidden md:block bg-white text-[#3d2817] px-6 py-2 rounded-full font-semibold hover:bg-[#f5f5f5] transition text-base">
+            Agenda tu cita
+          </a>
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
-      {/* Menú móvil */}
       {isOpen && (
-        <nav className="md:hidden bg-[#412904] px-6 py-4 space-y-4">
+        <nav className="md:hidden bg-[#3d2817] px-6 py-4 space-y-4 border-t border-[#5a3f27]">
           {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="block text-white hover:text-[#fecd5f] transition"
-            >
+            <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="block text-[#c4a96a] hover:text-white transition font-bold text-xl">
               {link.name}
             </a>
           ))}
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-white text-[#3d2817] px-6 py-2 rounded-full font-semibold hover:bg-[#f5f5f5] transition text-center text-base">
+            Agenda tu cita
+          </a>
         </nav>
       )}
     </header>
