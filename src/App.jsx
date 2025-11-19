@@ -5,6 +5,7 @@ import Specialties from "./components/Specialtie";
 import Consulting from "./components/Consulting";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import PlatesCarrousel from "./components/PlatesCarrousel";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <HeroSection />
 
       <About />
+
+      <PlatesCarrousel />
 
       <Specialties />
 
