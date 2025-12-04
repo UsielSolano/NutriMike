@@ -99,14 +99,6 @@ const PlatesCarrousel = () => {
                   }`}
                 loading={offset >= -1 && offset <= 1 ? "eager" : "lazy"}
               />
-
-              {isCenter && isLoaded && (
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-[#d4af37] px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-semibold text-[#3d2817]">
-                    Platillo {plateIndex + 1}
-                  </span>
-                </div>
-              )}
             </div>
           );
         })}
@@ -119,8 +111,8 @@ const PlatesCarrousel = () => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                ? 'w-6 bg-[#d4af37]'
-                : 'w-2 bg-[#6b4423] hover:bg-[#8b5a2b]'
+              ? 'w-6 bg-[#d4af37]'
+              : 'w-2 bg-[#6b4423] hover:bg-[#8b5a2b]'
               }`}
             aria-label={`Ir al platillo ${index + 1}`}
           />

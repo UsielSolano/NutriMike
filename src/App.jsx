@@ -6,6 +6,7 @@ import Consulting from "./components/Consulting";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import PlatesCarrousel from "./components/PlatesCarrousel";
+import NutrimikeeHero from "./components/NutrimikeeHero";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
       <PlatesCarrousel />
 
       <Specialties />
+
+      <NutrimikeeHero />
 
       <Consulting />
 
