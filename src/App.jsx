@@ -24,7 +24,7 @@ function App() {
 
       <NutrimikeeHero />
 
-      <Specialties />
+      {/* <Specialties /> */}
 
       <Education />
 
