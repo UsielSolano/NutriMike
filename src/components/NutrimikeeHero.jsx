@@ -13,7 +13,7 @@ export default function NutrimikeeHero() {
         }
         return prevCount + 1;
       });
-    }, 100); // Aumenta cada 100ms (ajusta este valor según quieras más o menos velocidad)
+    }, 600); // Aumenta cada 100ms (ajusta este valor según quieras más o menos velocidad)
 
     return () => clearInterval(interval);
   }, []);
