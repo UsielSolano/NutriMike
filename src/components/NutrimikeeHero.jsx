@@ -1,7 +1,23 @@
 import Imagen from './../assets/Logohorizontal.png'
 import { User, Clock, Smartphone } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function NutrimikeeHero() {
+  const [patientCount, setPatientCount] = useState(5000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPatientCount((prevCount) => {
+        if (prevCount >= 5300) {
+          return 5000; // Reinicia desde 5000
+        }
+        return prevCount + 1;
+      });
+    }, 100); // Aumenta cada 100ms (ajusta este valor según quieras más o menos velocidad)
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background image with blur */}
@@ -38,7 +54,7 @@ export default function NutrimikeeHero() {
               <User className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-yellow-900" />
             </div>
             <span className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold whitespace-nowrap">
-              + 5000 pacientes
+              + {patientCount.toLocaleString()} pacientes
             </span>
           </div>
 
