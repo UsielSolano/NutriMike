@@ -21,9 +21,9 @@ function App() {
 
       <PlatesCarrousel />
 
-      <Specialties />
-
       <NutrimikeeHero />
+
+      <Specialties />
 
       <Consulting />
 
