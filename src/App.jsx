@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import PlatesCarrousel from "./components/PlatesCarrousel";
 import NutrimikeeHero from "./components/NutrimikeeHero";
+import Education from "./components/Education";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
 
       <Specialties />
 
-      <Consulting />
+      <Education />
 
       <Contact />
     </div>
