@@ -1,4 +1,5 @@
-import Imagen from './../assets/Logohorizontal.png'
+import Imagen from '../../assets/Logohorizontal.png'
+import VideoBackground from '../../assets/video.webm' // o video.mp4
 import { User, Clock, Smartphone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -9,25 +10,31 @@ export default function NutrimikeeHero() {
     const interval = setInterval(() => {
       setPatientCount((prevCount) => {
         if (prevCount >= 5300) {
-          return 5000; // Reinicia desde 5000
+          return 5000;
         }
         return prevCount + 1;
       });
-    }, 1400); // Aumenta cada 100ms (ajusta este valor según quieras más o menos velocidad)
-
+    }, 1400);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background image with blur */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
+      {/* Video background with blur */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80)',
           filter: 'blur(3px)',
         }}
-      />
+      >
+        <source src={VideoBackground} type="video/webm" />
+        {/* Fallback para navegadores que no soporten WebM */}
+        <source src={VideoBackground.replace('.webm', '.mp4')} type="video/mp4" />
+      </video>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" />

@@ -1,4 +1,4 @@
-import NutriOutside from "../assets/NutriOutside.jpg";
+import NutriOutside from "../../assets/NutriOutside.jpg";
 
 export default function Education() {
   return (

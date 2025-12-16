@@ -1,4 +1,4 @@
-import AboutmeImage from "../assets/Aboutme.webp";
+import AboutmeImage from "../../assets/Aboutme.webp";
 import { useState } from "react";
 
 export default function About() {
