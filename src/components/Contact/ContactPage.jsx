@@ -231,14 +231,16 @@ export default function ContactPage() {
             {/* Mapa */}
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-80">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120819.14172471558!2d-103.78033445!3d19.2452342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255aab7e7891c7%3A0x754b1083b7b2c146!2sColima%2C%20Col.!5e0!3m2!1ses!2smx!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
                 title="Ubicación Nutrimikee"
-              />
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d314.4592960493632!2d-103.71702945517266!3d19.275590651664896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255ada7cd0132b%3A0xfddd1d938535fa61!2sP.%C2%BA%20Miguel%20de%20la%20Madrid%20Hurtado%20271-interior%20601%2C%20Real%20Hacienda%2C%2028978%20Cdad.%20de%20Villa%20de%20%C3%81lvarez%2C%20Col.!5e1!3m2!1ses-419!2smx!4v1758389075732!5m2!1ses-419!2smx"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-xl shadow-md"
+              ></iframe>
             </div>
 
             {/* Redes Sociales */}
@@ -247,18 +249,31 @@ export default function ContactPage() {
                 Síguenos en redes
               </h3>
               <div className="flex gap-4">
-                {socialMedia.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-yellow-100 hover:bg-yellow-200 w-14 h-14 rounded-full flex items-center justify-center text-yellow-600 transition-all duration-300 transform hover:scale-110"
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+                <a
+                  href="https://www.instagram.com/nutrimikee/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fecd5f] transition"
+                >
+                  <Instagram size={32} />
+                </a>
+                <a
+                  href="https://www.facebook.com/miguel.luna.559842?locale=es_LA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fecd5f] transition"
+                >
+                  <Facebook size={32} />
+                </a>
+                <a
+                  href="https://wa.me/5213121051883"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#fecd5f] transition flex items-center gap-2"
+                >
+                  <Phone size={28} />
+                 
+                </a>
               </div>
               <p className="text-gray-600 mt-6">
                 Mantente al día con tips de nutrición, recetas saludables y más contenido exclusivo

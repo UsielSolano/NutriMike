@@ -6,7 +6,7 @@ const PlatesCarrousel = () => {
   const [loadedImages, setLoadedImages] = useState(new Set());
 
   // Importar imágenes con Vite - optimizado
-  const platesModules = import.meta.glob('../assets/Plates/*.webp', {
+  const platesModules = import.meta.glob('../../assets/Plates/*.webp', {
     eager: true,
     query: {
       w: '256', // Ancho específico para reducir tamaño
