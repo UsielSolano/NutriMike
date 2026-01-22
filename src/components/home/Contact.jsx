@@ -17,7 +17,7 @@ export default function Contact() {
         <div className="mb-8">
           <iframe
             title="Ubicación Nutrimikee"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d314.4592960493632!2d-103.71702945517266!3d19.275590651664896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255ada7cd0132b%3A0xfddd1d938535fa61!2sP.%C2%BA%20Miguel%20de%20la%20Madrid%20Hurtado%20271-interior%20601%2C%20Real%20Hacienda%2C%2028978%20Cdad.%20de%20Villa%20de%20%C3%81lvarez%2C%20Col.!5e1!3m2!1ses-419!2smx!4v1758389075732!5m2!1ses-419!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d314.4592960493632!2d-103.71702945517266!3d19.275590651664896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84255ada7cd0132b%3A0xfddd1d938535fa61!2sP.%C2%BA%20Miguel%20de%20la%20Madrid%20Hurtado%20271-interior%20601%2C%20Real%20Hacienda%2C%2028978%20Cdad.%20de%20Villa%20de%20%C3%81lvarez%2C%20Col.!5e0!3m2!1ses-419!2smx!4v1758389075732!5m2!1ses-419!2smx&maptype=roadmap&zoom=17&language=es&region=MX"
             width="100%"
             height="300"
             style={{ border: 0 }}

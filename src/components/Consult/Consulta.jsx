@@ -16,10 +16,10 @@ export default function Consulta() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Datos del formulario:', formData);
+    console.log('Datos del formulario: no enviado ', formData);
     setEnviado(true);
+
     
-    // Resetear formulario después de 3 segundos
     setTimeout(() => {
       setEnviado(false);
       setFormData({
@@ -105,7 +105,7 @@ export default function Consulta() {
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                placeholder="Juan Pérez"
+                placeholder="tu nombre"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition"
                 required
               />
@@ -194,11 +194,10 @@ export default function Consulta() {
                 Tipo de consulta *
               </label>
               <div className="grid grid-cols-2 gap-4">
-                <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${
-                  formData.tipoConsulta === 'online' 
-                    ? 'border-yellow-500 bg-yellow-50' 
+                <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${formData.tipoConsulta === 'online'
+                    ? 'border-yellow-500 bg-yellow-50'
                     : 'border-gray-300 hover:border-yellow-300'
-                }`}>
+                  }`}>
                   <input
                     type="radio"
                     name="tipoConsulta"
@@ -209,11 +208,10 @@ export default function Consulta() {
                   />
                   <span className="font-semibold">Consulta Online</span>
                 </label>
-                <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${
-                  formData.tipoConsulta === 'presencial' 
-                    ? 'border-yellow-500 bg-yellow-50' 
+                <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${formData.tipoConsulta === 'presencial'
+                    ? 'border-yellow-500 bg-yellow-50'
                     : 'border-gray-300 hover:border-yellow-300'
-                }`}>
+                  }`}>
                   <input
                     type="radio"
                     name="tipoConsulta"
