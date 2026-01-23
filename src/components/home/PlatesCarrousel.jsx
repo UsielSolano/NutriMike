@@ -59,9 +59,9 @@ const PlatesCarrousel = () => {
   const visiblePlates = [-2, -1, 0, 1, 2]; // Reducir número de imágenes visibles
 
   return (
-    <div className="w-full py-16 bg-[#3d2817] overflow-hidden">
-      <h2 className="text-4xl font-bold text-center text-white mb-12">
-        Nuestros <span className="text-[#d4af37]">Platillos</span>
+    <div className="w-full py-16 bg-[#f5d5ae] overflow-hidden">
+      <h2 className="text-4xl font-bold text-center text-[#1b1b1b] mb-12">
+        Nuestros <span className="text-[#846a14]">Platillos</span>
       </h2>
 
       <div className="relative h-80 flex items-center justify-center">

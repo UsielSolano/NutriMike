@@ -25,7 +25,7 @@ export default function Header() {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-[#c4a96a] hover:text-white transition font-bold text-2xl"
+              className="text-yellow-100  hover:text-white transition font-bold text-2xl"
             >
               {link.name}
             </a>
@@ -37,7 +37,7 @@ export default function Header() {
             href={whatsappLink} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hidden md:block bg-white text-[#3d2817] px-6 py-2 rounded-full font-semibold hover:bg-[#f5f5f5] transition text-base"
+            className="hidden md:block bg-yellow-100  text-[#3d2817] px-6 py-2 rounded-full font-semibold hover:bg-[#f5f5f5] transition text-base"
           >
             Agenda tu cita
           </a>

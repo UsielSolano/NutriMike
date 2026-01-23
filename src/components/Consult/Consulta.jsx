@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle } from 'lucide-react';
+import AboutmeImage from "../../assets/consult.jpg";
 
 export default function Consulta() {
   const [formData, setFormData] = useState({
@@ -13,13 +14,13 @@ export default function Consulta() {
   });
 
   const [enviado, setEnviado] = useState(false);
-
+  const whatsappLink = "https://wa.me/523121051883?text=Hola%2C%20estoy%20interesado%20en%20cambiar%20mis%20h%C3%A1bitos%20alimenticios";
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Datos del formulario: no enviado ', formData);
     setEnviado(true);
 
-    
+
     setTimeout(() => {
       setEnviado(false);
       setFormData({
@@ -57,7 +58,7 @@ export default function Consulta() {
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white pt-24 pb-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 mt-5">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Agendar Consulta
           </h1>
@@ -136,6 +137,7 @@ export default function Consulta() {
                 <input
                   type="tel"
                   name="telefono"
+                  maxLength={10}
                   value={formData.telefono}
                   onChange={handleChange}
                   placeholder="+52 123 456 7890"
@@ -195,8 +197,8 @@ export default function Consulta() {
               </label>
               <div className="grid grid-cols-2 gap-4">
                 <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${formData.tipoConsulta === 'online'
-                    ? 'border-yellow-500 bg-yellow-50'
-                    : 'border-gray-300 hover:border-yellow-300'
+                  ? 'border-yellow-500 bg-yellow-50'
+                  : 'border-gray-300 hover:border-yellow-300'
                   }`}>
                   <input
                     type="radio"
@@ -205,12 +207,13 @@ export default function Consulta() {
                     checked={formData.tipoConsulta === 'online'}
                     onChange={handleChange}
                     className="mr-3"
+                    required
                   />
                   <span className="font-semibold">Consulta Online</span>
                 </label>
                 <label className={`flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${formData.tipoConsulta === 'presencial'
-                    ? 'border-yellow-500 bg-yellow-50'
-                    : 'border-gray-300 hover:border-yellow-300'
+                  ? 'border-yellow-500 bg-yellow-50'
+                  : 'border-gray-300 hover:border-yellow-300'
                   }`}>
                   <input
                     type="radio"
@@ -219,6 +222,7 @@ export default function Consulta() {
                     checked={formData.tipoConsulta === 'presencial'}
                     onChange={handleChange}
                     className="mr-3"
+                    required
                   />
                   <span className="font-semibold">Consulta Presencial</span>
                 </label>
@@ -229,7 +233,7 @@ export default function Consulta() {
             <div>
               <label className="flex items-center text-gray-700 font-semibold mb-2">
                 <MessageSquare className="w-5 h-5 mr-2 text-yellow-600" />
-                Motivo de consulta / Comentarios
+                Motivo de consulta / Comentarios. (*opcional)
               </label>
               <textarea
                 name="mensaje"
@@ -242,12 +246,24 @@ export default function Consulta() {
             </div>
 
             {/* Botón de envío */}
-            <button
-              type="submit"
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 rounded-lg transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            <a
+              href={whatsappLink + 
+  "¡Hola! Solicito una cita. Mis datos son:%0A%0A" +
+  "*Nombre:* " + formData.nombre + "%0A" +
+  "*Teléfono:* " + formData.telefono + "%0A" +
+  "*Email:* " + formData.email + "%0A" +
+  "*Fecha preferente:* " + formData.fecha + "%0A" +
+  "*Hora prederete :* " + formData.hora+ "%0A" +
+  "*Tipo de consulta:* " + formData.tipoConsulta + "%0A" +
+  "*Motivo:* " + formData.mensaje + "%0A%0A" +
+  "Quedo atento/a a su confirmación. ¡Gracias!"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-yellow-100 text-[#3d2817] px-6 py-2 rounded-full font-semibold hover:bg-[#f5f5f5] transition text-center text-base"
             >
-              Solicitar Consulta
-            </button>
+              Agenda tu cita
+            </a>
+
 
             <p className="text-sm text-gray-500 text-center">
               * Campos obligatorios. Nos pondremos en contacto contigo para confirmar tu cita.
