@@ -39,7 +39,7 @@ export default function Contact() {
             <Instagram size={32} />
           </a>
           <a
-            href="https://www.facebook.com/miguel.luna.559842?locale=es_LA"
+            href="https://www.facebook.com/profile.php?id=100028139515526"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#fecd5f] transition"
