@@ -33,7 +33,7 @@ export default function Contenido() {
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-white pt-24 pb-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-7">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Contenido Educativo
           </h1>

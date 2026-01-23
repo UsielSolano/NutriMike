@@ -97,7 +97,7 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-7">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Contáctanos
           </h1>
