@@ -389,7 +389,7 @@ export default function Consulta() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block w-full bg-yellow-100 hover:bg-yellow-200 text-[#3d2817] px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold transition-all duration-300 text-center text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg border-2 border-yellow-200 hover:border-yellow-300 flex items-center justify-center active:scale-95 hover:scale-[1.02]"
+                  className="group w-full bg-yellow-100 hover:bg-yellow-200 text-[#3d2817] px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold transition-all duration-300 text-center text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg border-2 border-yellow-200 hover:border-yellow-300 flex items-center justify-center active:scale-95 hover:scale-[1.02]"
                 >
                   <span className="truncate">Enviar solicitud por WhatsApp</span>
                   <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
