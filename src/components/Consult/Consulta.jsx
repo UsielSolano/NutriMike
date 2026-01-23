@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle, ChevronRight, Sparkles, Shield, Zap } from 'lucide-react';
 import AboutmeImage from "../../assets/consult.jpg";
+import backAgenda from "../../assets/backAgenda.jpg";
 
 export default function Consulta() {
   const [formData, setFormData] = useState({
@@ -70,7 +71,7 @@ export default function Consulta() {
   }
 
   return (
-    <div className="min-h-screen pt-20 pb-12 px-4 sm:px-6 bg-gradient-to-b from-yellow-50/20 via-white to-yellow-50/10">
+    <div className="min-h-screen pt-20 mt-5 pb-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header con imagen de fondo - Responsive mejorado */}
         <div className="relative mb-8 sm:mb-12 mt-4 sm:mt-8 overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
@@ -192,224 +193,248 @@ export default function Consulta() {
           <p className="text-center text-xs text-gray-600 mt-2">Completa el formulario para agendar</p>
         </div>
 
-        {/* Formulario - Responsive mejorado */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-6 md:p-8 lg:p-10 border border-yellow-100">
-          <div className="mb-6 sm:mb-8 text-center">
-            <div className="hidden lg:flex items-center justify-center mb-4">
-              <Sparkles className="w-6 h-6 text-yellow-600 mr-2" />
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3d2817]">Completa tus datos para agendar</h2>
+        {/* Formulario con background backAgenda - MÁS VISIBLE */}
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
+          {/* Background image con overlay MÁS TRANSPARENTE */}
+          <div className="absolute inset-0 z-0">
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+              style={{ backgroundImage: `url(${backAgenda})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/60 to-white/70"></div>
             </div>
-            <h2 className="lg:hidden text-xl sm:text-2xl font-bold text-[#3d2817] mb-2">Completa tus datos</h2>
-            <p className="text-sm sm:text-base text-gray-600">Todos los campos marcados con * son obligatorios</p>
           </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-            {/* Nombre y Email - Grid Responsive */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-2">
-                <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                  <User className="w-4 h-4 mr-2 text-yellow-600" />
-                  Nombre completo *
-                </label>
-                <input
-                  type="text"
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  placeholder="Ej. María González"
-                  className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
-                  required
-                />
+          
+          {/* Contenido del formulario */}
+          <div className="relative z-10 p-5 sm:p-6 md:p-8 lg:p-10">
+            <div className="mb-6 sm:mb-8 text-center">
+              <div className="hidden lg:flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                  <Sparkles className="w-6 h-6 text-yellow-600" />
+                </div>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#3d2817]">
+                  Completa tus datos para agendar
+                </h2>
               </div>
-
-              <div className="space-y-2">
-                <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                  <Mail className="w-4 h-4 mr-2 text-yellow-600" />
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="ejemplo@email.com"
-                  className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
-                  required
-                />
+              <div className="lg:hidden">
+                <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Sparkles className="w-5 h-5 text-yellow-600" />
+                </div>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#3d2817] mb-2">Completa tus datos</h2>
               </div>
+              <p className="text-sm sm:text-base text-gray-600">
+                Todos los campos marcados con * son obligatorios
+              </p>
             </div>
 
-            {/* Teléfono y Fecha - Grid Responsive */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-2">
-                <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                  <Phone className="w-4 h-4 mr-2 text-yellow-600" />
-                  Teléfono *
-                </label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  maxLength={10}
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  placeholder="+52 123 456 7890"
-                  className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
-                  required
-                />
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+              {/* Nombre y Email - Grid Responsive */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-2">
+                  <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
+                    <User className="w-4 h-4 mr-2 text-yellow-600" />
+                    Nombre completo *
+                  </label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    placeholder="Ej. María González"
+                    className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
+                    <Mail className="w-4 h-4 mr-2 text-yellow-600" />
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="ejemplo@email.com"
+                    className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                  <Calendar className="w-4 h-4 mr-2 text-yellow-600" />
-                  Fecha preferida *
-                </label>
-                <input
-                  type="date"
-                  name="fecha"
-                  value={formData.fecha}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-[#3d2817] text-sm sm:text-base"
-                  required
-                />
-              </div>
-            </div>
+              {/* Teléfono y Fecha - Grid Responsive */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-2">
+                  <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
+                    <Phone className="w-4 h-4 mr-2 text-yellow-600" />
+                    Teléfono *
+                  </label>
+                  <input
+                    type="tel"
+                    name="telefono"
+                    maxLength={10}
+                    value={formData.telefono}
+                    onChange={handleChange}
+                    placeholder="+52 123 456 7890"
+                    className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-sm sm:text-base"
+                    required
+                  />
+                </div>
 
-            {/* Hora y Tipo de Consulta - Grid Responsive */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-2">
+                  <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
+                    <Calendar className="w-4 h-4 mr-2 text-yellow-600" />
+                    Fecha preferida *
+                  </label>
+                  <input
+                    type="date"
+                    name="fecha"
+                    value={formData.fecha}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-[#3d2817] text-sm sm:text-base"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Hora y Tipo de Consulta - Grid Responsive */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-2">
+                  <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
+                    <Clock className="w-4 h-4 mr-2 text-yellow-600" />
+                    Hora preferida *
+                  </label>
+                  <select
+                    name="hora"
+                    value={formData.hora}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-[#3d2817] text-sm sm:text-base"
+                    required
+                  >
+                    <option value="" className="text-gray-400">Selecciona una hora</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">01:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                    <option value="17:00">05:00 PM</option>
+                    <option value="18:00">06:00 PM</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[#3d2817] font-semibold text-sm sm:text-base block">
+                    Tipo de consulta *
+                  </label>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
+                      formData.tipoConsulta === 'online'
+                        ? 'border-yellow-500 bg-yellow-100/90 text-yellow-700 shadow-sm'
+                        : 'border-gray-200 bg-white/90 hover:bg-white text-gray-700'
+                    }`}>
+                      <input
+                        type="radio"
+                        name="tipoConsulta"
+                        value="online"
+                        checked={formData.tipoConsulta === 'online'}
+                        onChange={handleChange}
+                        className="mr-2 sm:mr-3"
+                        required
+                      />
+                      <span className="whitespace-nowrap">Consulta Online</span>
+                    </label>
+                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
+                      formData.tipoConsulta === 'presencial'
+                        ? 'border-yellow-500 bg-yellow-100/90 text-yellow-700 shadow-sm'
+                        : 'border-gray-200 bg-white/90 hover:bg-white text-gray-700'
+                    }`}>
+                      <input
+                        type="radio"
+                        name="tipoConsulta"
+                        value="presencial"
+                        checked={formData.tipoConsulta === 'presencial'}
+                        onChange={handleChange}
+                        className="mr-2 sm:mr-3"
+                        required
+                      />
+                      <span className="whitespace-nowrap">Consulta Presencial</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mensaje - Responsive */}
               <div className="space-y-2">
                 <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                  <Clock className="w-4 h-4 mr-2 text-yellow-600" />
-                  Hora preferida *
+                  <MessageSquare className="w-4 h-4 mr-2 text-yellow-600" />
+                  Motivo de consulta / Comentarios (opcional)
                 </label>
-                <select
-                  name="hora"
-                  value={formData.hora}
+                <textarea
+                  name="mensaje"
+                  value={formData.mensaje}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all text-[#3d2817] text-sm sm:text-base"
-                  required
+                  rows="3"
+                  className="w-full px-4 py-3 sm:py-3.5 bg-white/90 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all resize-none text-sm sm:text-base min-h-[120px] sm:min-h-[140px]"
+                  placeholder="Cuéntanos sobre tus objetivos, necesidades específicas, alergias o condiciones especiales..."
+                ></textarea>
+              </div>
+
+              {/* Botón de envío - Responsive */}
+              <div className="pt-4 sm:pt-6">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block w-full bg-yellow-100 hover:bg-yellow-200 text-[#3d2817] px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold transition-all duration-300 text-center text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg border-2 border-yellow-200 hover:border-yellow-300 flex items-center justify-center active:scale-95 hover:scale-[1.02]"
                 >
-                  <option value="" className="text-gray-400">Selecciona una hora</option>
-                  <option value="09:00">09:00 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="13:00">01:00 PM</option>
-                  <option value="14:00">02:00 PM</option>
-                  <option value="15:00">03:00 PM</option>
-                  <option value="16:00">04:00 PM</option>
-                  <option value="17:00">05:00 PM</option>
-                  <option value="18:00">06:00 PM</option>
-                </select>
-              </div>
+                  <span className="truncate">Enviar solicitud por WhatsApp</span>
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </a>
 
-              <div className="space-y-2">
-                <label className="text-[#3d2817] font-semibold text-sm sm:text-base block">
-                  Tipo de consulta *
-                </label>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-                  <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
-                    formData.tipoConsulta === 'online'
-                      ? 'border-yellow-500 bg-yellow-50 text-yellow-700 shadow-sm'
-                      : 'border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700'
-                  }`}>
-                    <input
-                      type="radio"
-                      name="tipoConsulta"
-                      value="online"
-                      checked={formData.tipoConsulta === 'online'}
-                      onChange={handleChange}
-                      className="mr-2 sm:mr-3"
-                      required
-                    />
-                    <span className="whitespace-nowrap">Consulta Online</span>
-                  </label>
-                  <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
-                    formData.tipoConsulta === 'presencial'
-                      ? 'border-yellow-500 bg-yellow-50 text-yellow-700 shadow-sm'
-                      : 'border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700'
-                  }`}>
-                    <input
-                      type="radio"
-                      name="tipoConsulta"
-                      value="presencial"
-                      checked={formData.tipoConsulta === 'presencial'}
-                      onChange={handleChange}
-                      className="mr-2 sm:mr-3"
-                      required
-                    />
-                    <span className="whitespace-nowrap">Consulta Presencial</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            {/* Mensaje - Responsive */}
-            <div className="space-y-2">
-              <label className="flex items-center text-[#3d2817] font-semibold text-sm sm:text-base">
-                <MessageSquare className="w-4 h-4 mr-2 text-yellow-600" />
-                Motivo de consulta / Comentarios (opcional)
-              </label>
-              <textarea
-                name="mensaje"
-                value={formData.mensaje}
-                onChange={handleChange}
-                rows="3"
-                className="w-full px-4 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:bg-white transition-all resize-none text-sm sm:text-base min-h-[120px] sm:min-h-[140px]"
-                placeholder="Cuéntanos sobre tus objetivos, necesidades específicas, alergias o condiciones especiales..."
-              ></textarea>
-            </div>
-
-            {/* Botón de envío - Responsive */}
-            <div className="pt-4 sm:pt-6">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-full bg-yellow-100 hover:bg-yellow-200 text-[#3d2817] px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold transition-all duration-300 text-center text-sm sm:text-base md:text-lg shadow-md hover:shadow-lg border-2 border-yellow-200 hover:border-yellow-300 flex items-center justify-center active:scale-95"
-              >
-                <span className="truncate">Enviar solicitud por WhatsApp</span>
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              {/* Nota informativa - Responsive */}
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-yellow-50 rounded-lg border border-yellow-100">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-0.5">
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-600 rounded-full"></div>
+                {/* Nota informativa - Responsive */}
+                <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-yellow-100/90 rounded-lg border border-yellow-200">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-yellow-50 rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-600 rounded-full"></div>
+                      </div>
                     </div>
+                    <p className="ml-2 sm:ml-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      Al hacer clic serás redirigido a WhatsApp para confirmar tu cita. Recibirás respuesta en menos de 24 horas.
+                    </p>
                   </div>
-                  <p className="ml-2 sm:ml-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Al hacer clic serás redirigido a WhatsApp para confirmar tu cita. Recibirás respuesta en menos de 24 horas.
-                  </p>
                 </div>
-              </div>
 
-              {/* Indicadores de seguridad para móvil */}
-              <div className="lg:hidden mt-4 pt-4 border-t border-gray-100">
-                <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="text-xs text-gray-500">
-                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                      <Shield className="w-3 h-3 text-yellow-600" />
+                {/* Indicadores de seguridad para móvil */}
+                <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+                  <div className="grid grid-cols-2 gap-3 text-center">
+                    <div className="text-xs text-gray-600">
+                      <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                        <Shield className="w-3 h-3 text-yellow-600" />
+                      </div>
+                      <span>Datos protegidos</span>
                     </div>
-                    <span>Datos protegidos</span>
-                  </div>
-                  <div className="text-xs text-gray-500">
-                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-1">
-                      <Zap className="w-3 h-3 text-yellow-600" />
+                    <div className="text-xs text-gray-600">
+                      <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                        <Zap className="w-3 h-3 text-yellow-600" />
+                      </div>
+                      <span>Confirmación rápida</span>
                     </div>
-                    <span>Confirmación acorde al horario  </span>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
 
         {/* Footer informativo para móvil */}
         <div className="lg:hidden mt-6 text-center">
-          <p className="text-xs text-gray-500">¿Necesitas ayuda? Llama al +52 312 105 1883</p>
-          <p className="text-xs text-gray-400 mt-1">Horario de atención: Lunes a Viernes 9:00 - 18:00</p>
+          <p className="text-xs text-gray-600">¿Necesitas ayuda? Llama al +52 312 105 1883</p>
+          <p className="text-xs text-gray-500 mt-1">Horario de atención: Lunes a Viernes 9:00 - 18:00</p>
         </div>
       </div>
 
