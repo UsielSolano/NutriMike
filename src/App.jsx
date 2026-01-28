@@ -11,7 +11,7 @@ import Education from "./components/home/Education";
 // Importa las páginas desde sus carpetas
 import Contenido from "./components/Contain/Contenido";
 import Consulta from "./components/Consult/Consulta";
-import ContactPage from "./components/Contact/ContactPage";
+import ComidasRecetas from "./components/Contact/ComidasRecetas";
 
 // Componente Home que contiene toda tu página principal
 function Home() {
@@ -45,7 +45,7 @@ function App() {
           <Route path="/consulta" element={<Consulta />} />
 
           {/* Página de contacto */}
-          <Route path="/contacto" element={<ContactPage />} />
+          <Route path="/ComidasRecetas" element={<ComidasRecetas />} />
 
           {/* Página 404 - No encontrada */}
           <Route path="*" element={

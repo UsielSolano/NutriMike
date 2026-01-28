@@ -8,7 +8,7 @@ export default function Header() {
   const links = [
     { name: "Contenido", href: "/contenido" },
     { name: "Consulta", href: "/consulta" },
-    { name: "Contacto", href: "/contacto" },
+    { name: "Comidas y Recetas", href: "/ComidasRecetas" },
   ];
 
   const whatsappLink = "https://wa.me/523121051883?text=Hola%2C%20estoy%20interesado%20en%20cambiar%20mis%20h%C3%A1bitos%20alimenticios";
