@@ -1,19 +1,41 @@
-import React from 'react';
-import { Clock, Users, Flame, ChefHat, Heart, ShoppingBag, BookOpen, Utensils } from 'lucide-react';
+import React, { useState } from 'react';
+import { Clock, Users, Flame, ChefHat, Heart, ShoppingBag, BookOpen, Utensils, Youtube, FileText, X } from 'lucide-react';
 import RecetasCarousel from './RecetasCarousel';
 import backAgenda from "../../assets/backAgenda.jpg";
+import tostadaAgua from "../../assets/tostadaAgua.jpeg";
 
 export default function ComidasRecetas() {
+  const [selectedReceta, setSelectedReceta] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   const recetas = [
     {
       icon: <ChefHat className="w-8 h-8" />,
       titulo: "Ensalada Mediterránea con Quinoa",
       descripcion: "Una ensalada fresca y nutritiva cargada de vegetales, quinoa y aderezo de limón.",
-      tiempo: "25 min",
-      porciones: 4,
-      calorias: "320 cal",
+      tiempo: "20 min",
+      porciones: 2,
+      calorias: "280 cal",
       dificultad: "Fácil",
-      items: ["Quinoa cocida", "Tomates cherry", "Pepino", "Aceitunas", "Queso feta"],
+      items: ["Lechuga romana", "Zanahoria", "Quinoa", "Aceitunas", "Queso panela"],
+      ingredientes: [
+        "2 tazas de lechuga romana",
+        "1 taza de zanahoria rallada",
+        "½ taza de quinoa cocida",
+        "½ taza de aceitunas verdes y negras rebanadas",
+        "¼ taza de cebolla morada",
+        "250g de queso panela",
+        "20ml de aceite de oliva",
+        "1 pizca de hierbas finas",
+        "1 diente de ajo",
+        "Jugo de 1 limón amarillo"
+      ],
+      preparacion: [
+        "Mezcla el aceite de oliva, las hierbas finas, el ajo picado y una pizca de sal. Puedes agregar el jugo de 1 limón amarillo.",
+        "Incorpora todos los ingredientes vegetales en un bowl grande.",
+        "Agrega el marinaje y mezcla suavemente para integrar todos los sabores.",
+        "Sirve inmediatamente y disfruta."
+      ],
       imagen: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       categoria: "Ensaladas",
       vegano: false,
@@ -22,12 +44,31 @@ export default function ComidasRecetas() {
     {
       icon: <ChefHat className="w-8 h-8" />,
       titulo: "Salmón al Horno con Espárragos",
-      descripcion: "Salmón salvaje horneado con esparragos frescos y hierbas aromáticas.",
-      tiempo: "30 min",
-      porciones: 2,
-      calorias: "450 cal",
+      descripcion: "Salmón salvaje horneado con espárragos frescos, zanahorias y hierbas aromáticas.",
+      tiempo: "25 min",
+      porciones: 4,
+      calorias: "380 cal",
       dificultad: "Media",
-      items: ["Salmón fresco", "Espárragos", "Limón", "Eneldo", "Aceite de oliva"],
+      items: ["Filetes de salmón", "Espárragos", "Zanahorias", "Ajo", "Limón"],
+      ingredientes: [
+        "4 filetes de salmón (150-180g cada uno)",
+        "1 manojo de espárragos",
+        "2-3 zanahorias grandes",
+        "Aceite de oliva virgen extra",
+        "Sal y pimienta negra al gusto",
+        "2 dientes de ajo picados",
+        "Rodajas de limón",
+        "Eneldo fresco o seco (opcional)"
+      ],
+      preparacion: [
+        "Precalienta el horno a 200°C (400°F). Forra una bandeja con papel para hornear.",
+        "Coloca los espárragos y las zanahorias en bastones en la bandeja. Rocía con aceite, sal y pimienta.",
+        "TIP: Si las zanahorias son gruesas, hornéalas solas por 10 minutos antes.",
+        "Seca los filetes de salmón y colócalos en el centro de la bandeja.",
+        "Úntalos con ajo picado, sal, pimienta y coloca una rodaja de limón sobre cada uno.",
+        "Hornea durante 15-18 minutos hasta que el salmón esté cocido pero jugoso.",
+        "El salmón estará listo cuando la carne se separe fácilmente con un tenedor."
+      ],
       imagen: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       categoria: "Pescados",
       vegano: false,
@@ -36,32 +77,159 @@ export default function ComidasRecetas() {
     {
       icon: <ChefHat className="w-8 h-8" />,
       titulo: "Bowl de Desayuno Energético",
-      descripcion: "Comienza el día con energía con este bowl de avena, frutas y semillas.",
-      tiempo: "15 min",
+      descripcion: "Comienza el día con energía con este bowl de yogur, frutos rojos y semillas.",
+      tiempo: "10 min",
       porciones: 1,
-      calorias: "380 cal",
+      calorias: "320 cal",
       dificultad: "Fácil",
-      items: ["Avena integral", "Plátano", "Frutos rojos", "Chía", "Miel natural"],
+      items: ["Yogur natural", "Frutos rojos", "Miel", "Crema de cacahuate", "Semillas"],
+      ingredientes: [
+        "250ml de yogur natural",
+        "120g de frutos rojos congelados",
+        "15 ml de miel de abeja natural",
+        "30g de crema de cacahuate líquida",
+        "15g de coco rallado",
+        "15g de avena molida",
+        "15g de chía hidratada en agua",
+        "15g de semillas de girasol"
+      ],
+      preparacion: [
+        "Licúa el yogur con los frutos rojos congelados hasta obtener una mezcla homogénea.",
+        "Sirve la mezcla en un bowl.",
+        "Agrega como topping: crema de cacahuate, coco rallado, avena molida, chía hidratada y semillas de girasol.",
+        "Disfruta inmediatamente con una cuchara."
+      ],
       imagen: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       categoria: "Desayunos",
-      vegano: true,
+      vegano: false,
       vegetariano: true
     },
     {
       icon: <ChefHat className="w-8 h-8" />,
       titulo: "Curry de Lentejas y Vegetales",
       descripcion: "Un curry cremoso y especiado perfecto para días fríos, rico en proteínas vegetales.",
-      tiempo: "40 min",
-      porciones: 6,
-      calorias: "280 cal",
+      tiempo: "25 min",
+      porciones: 4,
+      calorias: "260 cal",
       dificultad: "Media",
-      items: ["Lentejas", "Leche de coco", "Curry", "Espinacas", "Cebolla"],
+      items: ["Lentejas cocidas", "Salsa de tomate", "Chipotle", "Zanahoria", "Papa"],
+      ingredientes: [
+        "2 tazas de lentejas cocidas",
+        "1 taza de salsa de tomate casera o puré de tomate",
+        "1 chile chipotle enlatado",
+        "1 taza de zanahoria y chícharos",
+        "1 taza de papa pelada y picada",
+        "1 cucharadita de aceite de oliva",
+        "½ taza de agua",
+        "Especias al gusto"
+      ],
+      preparacion: [
+        "En un sartén calienta el aceite y agrega la salsa de tomate, el chipotle picado y las especias al gusto.",
+        "Agrega ½ taza de agua y lleva a punto de ebullición.",
+        "Cuando esté hirviendo, agrega las lentejas cocidas y los vegetales.",
+        "Cocina por 5 minutos hasta que la verdura esté al dente.",
+        "Sirve con trocitos de pan pita tostado o croutones."
+      ],
       imagen: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       categoria: "Vegetariano",
       vegano: true,
       vegetariano: true
+    },
+    {
+      icon: <ChefHat className="w-8 h-8" />,
+      titulo: "Wrap de Aguacate y Pollo",
+      descripcion: "Wrap fresco y nutritivo con pollo marinado, vegetales y aguacate.",
+      tiempo: "20 min",
+      porciones: 2,
+      calorias: "350 cal",
+      dificultad: "Fácil",
+      items: ["Pechuga de pollo", "Tortillas de harina", "Lechuga", "Tomate", "Aguacate"],
+      ingredientes: [
+        "250-300g de pechuga de pollo en tiras",
+        "2 tortillas grandes de harina (tipo burrito)",
+        "1 taza de lechuga o espinacas frescas",
+        "1 tomate mediano picado",
+        "¼ de cebolla morada en tiras finas",
+        "Sal, pimienta, ajo y páprika al gusto",
+        "Aceite de oliva"
+      ],
+      preparacion: [
+        "Marina las tiras de pollo con sal, pimienta, ajo, páprika y un poco de aceite. Deja reposar 15 minutos.",
+        "Calienta un sartén con una gota de aceite y saltea el pollo a fuego medio-alto por 6-8 minutos hasta dorar.",
+        "Calienta las tortillas en un sartén caliente por unos segundos de cada lado.",
+        "Extiende la tortilla y coloca una base de lechuga.",
+        "Añade el tomate, la cebolla y las tiras de pollo caliente.",
+        "Dobla los laterales hacia el centro y enrolla desde la base apretando firmemente."
+      ],
+      imagen: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      categoria: "Principales",
+      vegano: false,
+      vegetariano: false
+    },
+    {
+      icon: <ChefHat className="w-8 h-8" />,
+      titulo: "Tostadas de Aguacate",
+      descripcion: "Tostadas crujientes con aguacate fresco y requesón especiado.",
+      tiempo: "15 min",
+      porciones: 3,
+      calorias: "220 cal",
+      dificultad: "Fácil",
+      items: ["Aguacate hass", "Pan tostado", "Requesón", "Jitomate cherry", "Chile árbol"],
+      ingredientes: [
+        "1 aguacate hass",
+        "½ taza de jitomate cherry",
+        "¼ taza de cebolla y cilantro picados",
+        "1 limón",
+        "3 rebanadas de pan tostado",
+        "100g de requesón",
+        "1 cucharadita de chile árbol"
+      ],
+      preparacion: [
+        "Mezcla 1: Mezcla el requesón con el chile de árbol, la cebolla y el cilantro hasta obtener una pasta.",
+        "Mezcla 2: Mezcla el aguacate con el jugo de limón, sal y especies. Agrega el jitomate cherry picado.",
+        "Sobre el pan tostado, unta la mezcla de aguacate.",
+        "En la parte superior, agrega un poco de la mezcla de requesón.",
+        "Decora con más jitomate cherry y sirve."
+      ],
+      imagen: tostadaAgua,  // ✅ Corregido: sin llaves
+      categoria: "Desayunos",
+      vegano: false,
+      vegetariano: true
     }
   ];
+
+  const tipsNutricion = [
+    {
+      titulo: "Horarios fijos para comidas",
+      descripcion: "Mantener una rutina de alimentación ayuda a estabilizar los niveles de azúcar en la sangre. Comer cada 3-4 horas reduce la urgencia de comer por impulso."
+    },
+    {
+      titulo: "Alimentos ricos en triptófano",
+      descripcion: "Este aminoácido es clave para la producción de serotonina. Incluye garbanzos, almendras o plátanos para regular el estado de ánimo naturalmente."
+    },
+    {
+      titulo: "Snacks con alta densidad nutricional",
+      descripcion: "Frutas y verduras son tus mejores aliadas por su bajo contenido calórico y alta capacidad de saciedad gracias a la fibra."
+    },
+    {
+      titulo: "Reduce cafeína y estimulantes",
+      descripcion: "El exceso puede elevar nerviosismo y ansiedad. Sustituye por infusiones relajantes como manzanilla, tila o valeriana."
+    },
+    {
+      titulo: "Asegura Magnesio y Vitamina D",
+      descripcion: "Niveles bajos se asocian con mayor estrés. Incluye aguacate y frutos secos en tu dieta diaria."
+    }
+  ];
+
+  const openReceta = (receta) => {
+    setSelectedReceta(receta);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedReceta(null);
+  };
 
   return (
     <div
@@ -81,10 +249,10 @@ export default function ComidasRecetas() {
             <Utensils className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 drop-shadow-lg">
-            Comidas y Recetas Saludables
+            Comidas y Recetas NutriMikke
           </h1>
           <p className="text-lg md:text-xl text-[#2f2f2f] max-w-3xl mx-auto drop-shadow">
-            Descubre recetas deliciosas y nutritivas para cada ocasión. Cocina saludable nunca fue tan fácil y sabrosa
+            Descubre recetas deliciosas y nutritivas para cada ocasión. Cocina saludable con los tips de NutriMikke
           </p>
         </div>
 
@@ -94,19 +262,19 @@ export default function ComidasRecetas() {
             Todas
           </button>
           <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
+            Desayunos
+          </button>
+          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
             Vegetariano
           </button>
           <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Vegano
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Bajas Calorías
+            Principales
           </button>
           <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
             Rápido
           </button>
           <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Postres
+            Ensaladas
           </button>
         </div>
 
@@ -150,7 +318,7 @@ export default function ComidasRecetas() {
                   </div>
                 </div>
 
-                <p className="text-gray-700 mb-6">
+                <p className="text-gray-700 mb-4">
                   {receta.descripcion}
                 </p>
 
@@ -199,7 +367,10 @@ export default function ComidasRecetas() {
 
                 {/* Botones */}
                 <div className="flex gap-3">
-                  <button className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center">
+                  <button
+                    onClick={() => openReceta(receta)}
+                    className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center"
+                  >
                     <BookOpen className="w-4 h-4 mr-2" />
                     Ver receta completa
                   </button>
@@ -212,28 +383,69 @@ export default function ComidasRecetas() {
           ))}
         </div>
 
-        {/* Sección destacada */}
-        <div
-          className="relative rounded-2xl p-8 md:p-12 text-white text-center overflow-hidden mb-16 shadow-2xl bg-[#3d2817e7] border border-yellow-500/20"
-        >
-          <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full mb-6">
-              <ChefHat className="w-8 h-8 text-white" />
+        {/* Canal de YouTube y Guías */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <a
+            href="https://www.youtube.com/channel/UCYr2nyRX_oxFnNF0oROuuHA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                <Youtube className="w-8 h-8 text-red-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold">Canal de YouTube</h3>
+                <p className="text-red-100">@NutriMikke</p>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Listo para transformar tu cocina?
-            </h2>
-            <p className="text-lg md:text-xl mb-8 text-yellow-100">
-              Descubre nuestro plan de menús semanales con lista de compras incluidas
+            <p className="text-lg mb-4">
+              Suscríbete para más recetas y tips de nutrición en video
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                Plan de menús semanal
-              </button>
-              <button className="bg-white text-gray-800 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-xl border border-yellow-500">
-                Ver todas las recetas
-              </button>
+            <div className="flex items-center gap-2 text-red-100">
+              <span className="text-sm">Visitar canal</span>
+              <span>→</span>
             </div>
+          </a>
+
+          <a
+            href="https://drive.google.com/drive/folders/1wg2e_y3nwvvoXjrJs3mNcAp_drNdVFaR?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-2xl p-8 text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-300 transform hover:-translate-y-1 shadow-xl cursor-pointer"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                <FileText className="w-8 h-8 text-yellow-600" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold">Guías y Artículos</h3>
+                <p className="text-yellow-100">Recursos gratuitos</p>
+              </div>
+            </div>
+            <p className="text-lg mb-4">
+              Descarga guías de nutrición y lee artículos exclusivos
+            </p>
+            <div className="flex items-center gap-2 text-yellow-100">
+              <span className="text-sm">Ver recursos</span>
+              <span>→</span>
+            </div>
+          </a>
+        </div>
+
+        {/* Tips de Nutrición */}
+        <div className="bg-[#ffffffe5] rounded-2xl shadow-2xl p-8 mb-16 border border-yellow-100/30">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Tips de Nutrición NutriMikke
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tipsNutricion.map((tip, index) => (
+              <div key={index} className="bg-gradient-to-r from-yellow-50 to-yellow-100/50 rounded-xl p-6 border border-yellow-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{tip.titulo}</h3>
+                <p className="text-gray-700">{tip.descripcion}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -244,32 +456,112 @@ export default function ComidasRecetas() {
           </h3>
           <RecetasCarousel />
         </div>
+      </div>
 
-        {/* Consejos de cocina */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-[#ffffffe5] rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mb-4">
-              <ShoppingBag className="w-6 h-6 text-white" />
+      {/* Modal de receta completa */}
+      {/* Modal de receta completa */}
+      {showModal && selectedReceta && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+
+          <div className="relative bg-white w-full max-w-3xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden animate-fadeIn">
+
+            {/* Botón cerrar */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 hover:bg-gray-100 transition z-20 shadow"
+            >
+              <X className="w-6 h-6 text-gray-700" />
+            </button>
+
+            {/* Imagen */}
+            <div className="h-56 sm:h-72 overflow-hidden relative">
+              <img
+                src={selectedReceta.imagen}
+                alt={selectedReceta.titulo}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-4 left-4">
+                <span className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow">
+                  {selectedReceta.categoria}
+                </span>
+              </div>
             </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-3">Compra inteligente</h4>
-            <p className="text-gray-700">Aprende a seleccionar los mejores ingredientes y a organizar tu despensa.</p>
-          </div>
-          <div className="bg-[#ffffffe5] rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mb-4">
-              <Clock className="w-6 h-6 text-white" />
+
+            {/* Contenido scrollable */}
+            <div className="p-6 sm:p-8 overflow-y-auto max-h-[60vh]">
+
+              {/* Header */}
+              <div className="mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                  {selectedReceta.titulo}
+                </h2>
+
+                <div className="flex flex-wrap gap-3 items-center">
+                  <div className="flex items-center text-gray-600">
+                    <Clock className="w-4 h-4 mr-1 text-yellow-500" />
+                    {selectedReceta.tiempo}
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <Users className="w-4 h-4 mr-1 text-yellow-500" />
+                    {selectedReceta.porciones} porciones
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <Flame className="w-4 h-4 mr-1 text-yellow-500" />
+                    {selectedReceta.calorias}
+                  </div>
+
+                  {selectedReceta.vegano && (
+                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                      VEGANO
+                    </span>
+                  )}
+                  {selectedReceta.vegetariano && !selectedReceta.vegano && (
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      VEGETARIANO
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Ingredientes */}
+              <div className="mb-8">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <ShoppingBag className="w-5 h-5 mr-2 text-yellow-500" />
+                  Ingredientes
+                </h3>
+
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {selectedReceta.ingredientes.map((ingrediente, index) => (
+                    <li key={index} className="flex items-start text-gray-700 text-sm">
+                      <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3"></span>
+                      {ingrediente}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Preparación */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <ChefHat className="w-5 h-5 mr-2 text-yellow-500" />
+                  Preparación
+                </h3>
+
+                <ol className="space-y-4">
+                  {selectedReceta.preparacion.map((paso, index) => (
+                    <li key={index} className="flex text-gray-700 text-sm">
+                      <span className="font-bold text-yellow-500 mr-3">
+                        {index + 1}.
+                      </span>
+                      {paso}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-3">Batch Cooking</h4>
-            <p className="text-gray-700">Prepara varias comidas a la vez y ahorra tiempo durante la semana.</p>
-          </div>
-          <div className="bg-[#ffffffe5] rounded-xl p-6 shadow-lg">
-            <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mb-4">
-              <Flame className="w-6 h-6 text-white" />
-            </div>
-            <h4 className="text-xl font-bold text-gray-900 mb-3">Cocción saludable</h4>
-            <p className="text-gray-700">Técnicas de cocción que preservan nutrientes y reducen calorías.</p>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -2,8 +2,7 @@ import React from "react";
 import { Facebook, Instagram, Phone } from "lucide-react";
 
 export default function Contact() {
-  return (
-    <section id="contacto" className="py-16 bg-[#412904] text-white">
+  return (    <section id="contacto" className="py-16 bg-[#412904] text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-6">Contacto & Ubicación</h2>
         <p className="mb-6">
