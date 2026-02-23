@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Clock, Users, Flame, ChefHat, Heart, ShoppingBag, BookOpen, Utensils, Youtube, FileText, X } from 'lucide-react';
-import RecetasCarousel from './RecetasCarousel';
+
 import backAgenda from "../../assets/backAgenda.jpg";
 import tostadaAgua from "../../assets/tostadaAgua.jpeg";
+import Footer from './../home/Footer';
 
 export default function ComidasRecetas() {
   const [selectedReceta, setSelectedReceta] = useState(null);
@@ -191,7 +192,7 @@ export default function ComidasRecetas() {
         "En la parte superior, agrega un poco de la mezcla de requesón.",
         "Decora con más jitomate cherry y sirve."
       ],
-      imagen: tostadaAgua,  // ✅ Corregido: sin llaves
+      imagen: tostadaAgua,
       categoria: "Desayunos",
       vegano: false,
       vegetariano: true
@@ -218,6 +219,10 @@ export default function ComidasRecetas() {
     {
       titulo: "Asegura Magnesio y Vitamina D",
       descripcion: "Niveles bajos se asocian con mayor estrés. Incluye aguacate y frutos secos en tu dieta diaria."
+    },
+    {
+      titulo: "Hidratación consciente",
+      descripcion: "Bebe al menos 2 litros de agua al día. Una buena hidratación mejora la digestión, la concentración y ayuda a controlar el apetito."
     }
   ];
 
@@ -448,17 +453,8 @@ export default function ComidasRecetas() {
             ))}
           </div>
         </div>
-
-        {/* Carrusel de recetas rápidas */}
-        <div className="bg-[#ffffff21] rounded-2xl shadow-2xl p-6 border border-yellow-100/30 mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Recetas rápidas (menos de 20 minutos)
-          </h3>
-          <RecetasCarousel />
-        </div>
       </div>
 
-      {/* Modal de receta completa */}
       {/* Modal de receta completa */}
       {showModal && selectedReceta && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
@@ -562,6 +558,9 @@ export default function ComidasRecetas() {
           </div>
         </div>
       )}
+        <Footer />
     </div>
   );
+
+
 }

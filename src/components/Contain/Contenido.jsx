@@ -2,6 +2,7 @@ import React from 'react';
 import { BookOpen, Video, FileText, Award } from 'lucide-react';
 import VideoCarousel from './videos/Videos'
 import backAgenda from "../../assets/backAgenda.jpg";
+import Footer from '../home/Footer';
 
 export default function Contenido() {
   const contenidos = [
@@ -108,6 +109,7 @@ export default function Contenido() {
           <VideoCarousel />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, MessageSquare, CheckCircle, ChevronRight, Sparkles, Shield, Zap } from 'lucide-react';
 import AboutmeImage from "../../assets/consult.jpg";
 import backAgenda from "../../assets/backAgenda.jpg";
+import Footer from '../home/Footer';
 
 export default function Consulta() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ export default function Consulta() {
   });
 
   const [enviado, setEnviado] = useState(false);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Datos del formulario: no enviado ', formData);
@@ -75,13 +76,13 @@ export default function Consulta() {
       <div className="max-w-6xl mx-auto">
         {/* Header con imagen de fondo - Responsive mejorado */}
         <div className="relative mb-8 sm:mb-12 mt-4 sm:mt-8 overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${AboutmeImage})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#3d2817]/95 via-[#3d2817]/90 to-[#3d2817]/95"></div>
           </div>
-          
+
           <div className="relative z-10 p-6 sm:p-8 md:p-12 lg:p-16">
             <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-center">
               {/* Texto principal - Mobile First */}
@@ -96,7 +97,7 @@ export default function Consulta() {
                 <p className="text-sm sm:text-base md:text-lg text-yellow-100/90 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
                   Da el primer paso hacia una vida más saludable con nuestro equipo de expertos en nutrición
                 </p>
-                
+
                 {/* Llamado a la acción móvil */}
                 <div className="lg:hidden mb-6">
                   <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
@@ -128,7 +129,7 @@ export default function Consulta() {
                   <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/20">
                     Beneficios de tu consulta
                   </h2>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div className="flex items-center p-3 sm:p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] active:scale-95">
                       <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-yellow-100/20 rounded-lg flex items-center justify-center mr-3">
@@ -197,14 +198,14 @@ export default function Consulta() {
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
           {/* Background image con overlay MÁS TRANSPARENTE */}
           <div className="absolute inset-0 z-0">
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
               style={{ backgroundImage: `url(${backAgenda})` }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/60 to-white/70"></div>
             </div>
           </div>
-          
+
           {/* Contenido del formulario */}
           <div className="relative z-10 p-5 sm:p-6 md:p-8 lg:p-10">
             <div className="mb-6 sm:mb-8 text-center">
@@ -331,11 +332,10 @@ export default function Consulta() {
                     Tipo de consulta *
                   </label>
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
-                      formData.tipoConsulta === 'online'
+                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${formData.tipoConsulta === 'online'
                         ? 'border-yellow-500 bg-yellow-100/90 text-yellow-700 shadow-sm'
                         : 'border-gray-200 bg-white/90 hover:bg-white text-gray-700'
-                    }`}>
+                      }`}>
                       <input
                         type="radio"
                         name="tipoConsulta"
@@ -347,11 +347,10 @@ export default function Consulta() {
                       />
                       <span className="whitespace-nowrap">Consulta Online</span>
                     </label>
-                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${
-                      formData.tipoConsulta === 'presencial'
+                    <label className={`flex-1 flex items-center justify-center p-3 sm:p-4 border rounded-lg cursor-pointer transition-all text-sm sm:text-base ${formData.tipoConsulta === 'presencial'
                         ? 'border-yellow-500 bg-yellow-100/90 text-yellow-700 shadow-sm'
                         : 'border-gray-200 bg-white/90 hover:bg-white text-gray-700'
-                    }`}>
+                      }`}>
                       <input
                         type="radio"
                         name="tipoConsulta"
@@ -436,6 +435,7 @@ export default function Consulta() {
           <p className="text-xs text-gray-600">¿Necesitas ayuda? Llama al +52 312 105 1883</p>
           <p className="text-xs text-gray-500 mt-1">Horario de atención: Lunes a Viernes 9:00 - 18:00</p>
         </div>
+        <Footer />
       </div>
 
       {/* Añadir animaciones al CSS global */}
@@ -464,6 +464,7 @@ export default function Consulta() {
           }
         }
       `}</style>
+
     </div>
-  );
+  );  
 }
