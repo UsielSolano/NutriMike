@@ -7,6 +7,7 @@ import About from "./components/home/About";
 import PlatesCarrousel from "./components/home/PlatesCarrousel";
 import NutrimikeeHero from "./components/home/NutrimikeeHero";
 import Education from "./components/home/Education";
+import NutriBotFloating from "./components/Bot/NutriBotFloating";
 
 // Importa las páginas desde sus carpetas
 import Contenido from "./components/Contain/Contenido";
@@ -30,7 +31,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="font-sans bg-[#ffffff]">
+      <div className="font-sans bg-[#ffffff] relative"> {/* 👈 Agrega 'relative' */}
         {/* Header permanece visible en todas las páginas */}
         <Header />
 
@@ -63,6 +64,10 @@ function App() {
             </div>
           } />
         </Routes>
+
+        {/* NutroBot
+        <NutriBotFloating />
+        */}
       </div>
     </Router>
   );
