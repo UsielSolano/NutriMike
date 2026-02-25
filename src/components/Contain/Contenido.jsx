@@ -1,6 +1,6 @@
 import React from 'react';
 import { BookOpen, Video, FileText, Award } from 'lucide-react';
-import VideoCarousel from './videos/Videos'
+import TestimoniosCarrusel from './videos/TestimoniosCarrusel'
 import backAgenda from "../../assets/backAgenda.jpg";
 import Footer from '../home/Footer';
 
@@ -106,10 +106,10 @@ export default function Contenido() {
         </div>
 
         <div className="bg-[#ffffff21] rounded-2xl shadow-2xl p-6 border border-yellow-100/30">
-          <VideoCarousel />
+          <TestimoniosCarrusel />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
