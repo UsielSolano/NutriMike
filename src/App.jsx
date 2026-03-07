@@ -7,7 +7,7 @@ import About from "./components/home/About";
 import PlatesCarrousel from "./components/home/PlatesCarrousel";
 import NutrimikeeHero from "./components/home/NutrimikeeHero";
 import Education from "./components/home/Education";
-import NutriBotFloating from "./components/Bot/NutriBotFloating";
+import NutriBotFloating from "./components/Bot/NutriBotFloating"; 
 
 // Importa las páginas desde sus carpetas
 import Contenido from "./components/Contain/Contenido";
@@ -65,9 +65,11 @@ function App() {
           } />
         </Routes>
 
-        {/* NutroBot
+        {/*
+        nutriolobot
+        */} 
         <NutriBotFloating />
-        */}
+        
       </div>
     </Router>
   );

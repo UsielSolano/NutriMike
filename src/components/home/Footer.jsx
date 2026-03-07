@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Columna 1: Logo y descripción */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-[#fecd5f]">NutriMikke</h3>
+            <h3 className="text-2xl font-bold text-[#fecd5f]">NutriMikee</h3>
             <p className="text-sm text-gray-300 leading-relaxed">
               Nutrición personalizada para ayudarte a alcanzar tus metas de salud y bienestar. 
               Descubre recetas saludables y tips de nutrición en nuestro sitio.
@@ -36,11 +36,11 @@ export default function Footer() {
                 <span>+52 312 105 1883</span>
               </a>
               <a
-                href="mailto:info@nutrimikke.com"
+                href="mailto:info@nutrimikee.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-[#fecd5f] transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>info@nutrimikke.com</span>
+                <span>info@nutrimikee.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
@@ -102,7 +102,7 @@ export default function Footer() {
       {/* Barra inferior con copyright */}
       <div className="bg-black/30 py-4">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
-          <p>© {currentYear} NutriMikke. Todos los derechos reservados.</p>
+          <p>© {currentYear} NutriMikee. Todos los derechos reservados.</p>
           <div className="flex gap-4 mt-2 sm:mt-0">
             <a href="#" className="hover:text-[#fecd5f] transition-colors">Aviso de privacidad</a>
             <span>|</span>

@@ -254,10 +254,10 @@ export default function ComidasRecetas() {
             <Utensils className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 drop-shadow-lg">
-            Comidas y Recetas NutriMikke
+            Comidas y Recetas NutriMikee
           </h1>
           <p className="text-lg md:text-xl text-[#2f2f2f] max-w-3xl mx-auto drop-shadow">
-            Descubre recetas deliciosas y nutritivas para cada ocasión. Cocina saludable con los tips de NutriMikke
+            Descubre recetas deliciosas y nutritivas para cada ocasión. Cocina saludable con los tips de NutriMikee
           </p>
         </div>
 
@@ -402,7 +402,7 @@ export default function ComidasRecetas() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Canal de YouTube</h3>
-                <p className="text-red-100">@NutriMikke</p>
+                <p className="text-red-100">@NutriMikee</p>
               </div>
             </div>
             <p className="text-lg mb-4">
@@ -442,7 +442,7 @@ export default function ComidasRecetas() {
         {/* Tips de Nutrición */}
         <div className="bg-[#ffffffe5] rounded-2xl shadow-2xl p-8 mb-16 border border-yellow-100/30">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Tips de Nutrición NutriMikke
+            Tips de Nutrición Nutrimikee
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tipsNutricion.map((tip, index) => (
