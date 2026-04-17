@@ -264,22 +264,7 @@ export default function ComidasRecetas() {
         {/* Filtros */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button className="px-6 py-2 bg-yellow-500 text-white rounded-full font-semibold hover:bg-yellow-600 transition-all">
-            Todas
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Desayunos
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Vegetariano
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Principales
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Rápido
-          </button>
-          <button className="px-6 py-2 bg-white text-gray-700 rounded-full font-semibold hover:bg-gray-100 border border-gray-300 transition-all">
-            Ensaladas
+            Elige la reseta
           </button>
         </div>
 
@@ -302,9 +287,11 @@ export default function ComidasRecetas() {
                     {receta.categoria}
                   </span>
                 </div>
+                   {/* 
                 <button className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                   <Heart className="w-5 h-5 text-gray-700" />
                 </button>
+                 */}
               </div>
 
               {/* Contenido */}
@@ -379,9 +366,10 @@ export default function ComidasRecetas() {
                     <BookOpen className="w-4 h-4 mr-2" />
                     Ver receta completa
                   </button>
+                 {/* 
                   <button className="px-4 bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center">
                     <Heart className="w-4 h-4" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
