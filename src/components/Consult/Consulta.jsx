@@ -174,7 +174,7 @@ export default function Consulta() {
 
                   <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/20">
                     <p className="text-yellow-100/80 text-xs sm:text-sm text-center italic">
-                      "Primera consulta informativa sin compromiso"
+                      "Informes sin compromiso"
                     </p>
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export default function Consulta() {
         {/* Footer informativo para móvil */}
         <div className="lg:hidden mt-6 text-center">
           <p className="text-xs text-gray-600">¿Necesitas ayuda? Llama al +52 312 105 1883</p>
-          <p className="text-xs text-gray-500 mt-1">Horario de atención: Lunes a Viernes 9:00 - 18:00</p>
+          <p className="text-xs text-gray-500 mt-1">Horario de atención: Lunes a Viernes 9:30 - 20:00</p>
         </div>
         <Footer />
       </div>

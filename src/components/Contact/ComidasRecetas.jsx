@@ -390,7 +390,7 @@ export default function ComidasRecetas() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Canal de YouTube</h3>
-                <p className="text-red-100">@NutriMikee</p>
+                <p className="text-red-100">@Nutrimikee</p>
               </div>
             </div>
             <p className="text-lg mb-4">

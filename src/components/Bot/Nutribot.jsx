@@ -82,13 +82,11 @@ export default function NutriBot() {
       setTimeout(() => {
         addBotMessage(
           '🤖 *¡Hola! Soy NutriBot*\n\nTu asistente virtual de nutrición. ¿En qué puedo ayudarte hoy?\n\n' +
-          '━━━━━━━━━━━━━━━━━━━━━\n\n' +
           '*1.* 📅 Agendar consulta\n' +
           '*2.* 💡 Tips de nutrición\n' +
           '*3.* 💧 Calculadora de agua\n' +
           '*4.* 🏃 Calculadora de ejercicio\n' +
           '*5.* 🥩 Calculadora de proteínas\n\n' +
-          '━━━━━━━━━━━━━━━━━━━━━\n\n' +
           '👉 *Escribe el número de la opción que deseas*'
         );
         setCurrentMenu('main');

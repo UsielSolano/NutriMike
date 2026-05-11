@@ -36,11 +36,11 @@ export default function Footer() {
                 <span>+52 312 105 1883</span>
               </a>
               <a
-                href="mailto:info@nutrimikee.com"
+                href="mailto:nutrimikee.colima@gmail.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-[#fecd5f] transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>info@nutrimikee.com</span>
+                <span>nutrimikee.colima@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
@@ -91,9 +91,7 @@ export default function Footer() {
             {/* Horarios de atención */}
             <div className="mt-6 pt-4 border-t border-white/20">
               <h5 className="font-semibold text-[#fecd5f] mb-2">Horario de atención</h5>
-              <p className="text-sm text-gray-300">Lunes a Viernes: 9:00 AM - 7:00 PM</p>
-              <p className="text-sm text-gray-300">Sábados: 9:00 AM - 2:00 PM</p>
-              <p className="text-sm text-gray-300">Domingos: Cerrado</p>
+              <p className="text-sm text-gray-300">Lunes a Viernes: 9:30 AM - 8:00 PM</p>
             </div>
           </div>
         </div>
