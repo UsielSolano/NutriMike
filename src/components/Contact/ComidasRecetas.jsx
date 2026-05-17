@@ -287,7 +287,7 @@ export default function ComidasRecetas() {
                     {receta.categoria}
                   </span>
                 </div>
-                   {/* 
+                {/* 
                 <button className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                   <Heart className="w-5 h-5 text-gray-700" />
                 </button>
@@ -366,7 +366,7 @@ export default function ComidasRecetas() {
                     <BookOpen className="w-4 h-4 mr-2" />
                     Ver receta completa
                   </button>
-                 {/* 
+                  {/* 
                   <button className="px-4 bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center">
                     <Heart className="w-4 h-4" />
                   </button> */}
@@ -374,57 +374,6 @@ export default function ComidasRecetas() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Canal de YouTube y Guías */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          <a
-            href="https://www.youtube.com/channel/UCYr2nyRX_oxFnNF0oROuuHA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                <Youtube className="w-8 h-8 text-red-600" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">Canal de YouTube</h3>
-                <p className="text-red-100">@Nutrimikee</p>
-              </div>
-            </div>
-            <p className="text-lg mb-4">
-              Suscríbete para más recetas y tips de nutrición en video
-            </p>
-            <div className="flex items-center gap-2 text-red-100">
-              <span className="text-sm">Visitar canal</span>
-              <span>→</span>
-            </div>
-          </a>
-
-          <a
-            href="https://drive.google.com/drive/folders/1wg2e_y3nwvvoXjrJs3mNcAp_drNdVFaR?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-2xl p-8 text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-300 transform hover:-translate-y-1 shadow-xl cursor-pointer"
-          >
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                <FileText className="w-8 h-8 text-yellow-600" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">Guías y Artículos</h3>
-                <p className="text-yellow-100">Recursos gratuitos</p>
-              </div>
-            </div>
-            <p className="text-lg mb-4">
-              Descarga guías de nutrición y lee artículos exclusivos
-            </p>
-            <div className="flex items-center gap-2 text-yellow-100">
-              <span className="text-sm">Ver recursos</span>
-              <span>→</span>
-            </div>
-          </a>
         </div>
 
         {/* Tips de Nutrición */}
@@ -546,7 +495,7 @@ export default function ComidasRecetas() {
           </div>
         </div>
       )}
-        <Footer />
+      <Footer />
     </div>
   );
 
