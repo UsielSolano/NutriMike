@@ -312,9 +312,9 @@ export default function Contenido() {
             <p className="text-lg md:text-xl mb-8 text-yellow-100">
               Accede a todo nuestro contenido exclusivo y comienza tu viaje hacia una vida más saludable
             </p>
-            <button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+            {/* <button className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
               Explorar todo el contenido
-            </button>
+            </button> */}
           </div>
         </div>
 
